@@ -43,6 +43,7 @@
     Recurly.buildTransactionForm({
       target: '#recurly-transaction',
       signature: recurly_signature,
+      enableCoupons: true,
       successURL: 'http://ling1.sundaysenergy.net:9294/dumper?email=' + $.query.get('email') + '&site_url=' + encodeURIComponent($.query.get('site_url')),
       account: {
         firstName: $.query.get('first_name'),
@@ -57,6 +58,7 @@
 <body id="public" onorientationchange="window.scrollTo(0, 1)">
 
 <div id="container" class="ltr">
+
   <h1 id="logo">
     <a>Sundays Energy.</a>
   </h1>
