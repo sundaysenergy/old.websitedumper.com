@@ -35,7 +35,7 @@
     });
     
     Recurly.config({
-      subdomain: 'sundays-energy-test',
+      subdomain: 'sundaysenergy',
       currency: 'USD',
       country: 'US'
     });
@@ -45,24 +45,10 @@
       signature: recurly_signature,
       successURL: 'http://ling1.sundaysenergy.net:9294/dumper?email=' + $.query.get('email') + '&site_url=' + encodeURIComponent($.query.get('site_url')),
       account: {
-        firstName: 'Joe',
-        lastName: 'User',
+        firstName: $.query.get('first_name'),
+        lastName: $.query.get('last_name'),
         email: $.query.get('email'),
-        phone: '555-555-5555',
-        companyName: 'Acme'
       },
-      billingInfo: {
-        firstName: 'Joe',
-        lastName: 'User',
-        address1: '123 somestreet',
-        address2: '45',
-        city: 'San Francisco',
-        zip: '94107',
-        state: 'CA',
-        country: 'US',
-        cardNumber: '4111-1111-1111-1111',
-        CVV: '123'
-      }
     });
   </script>
 
